@@ -11,6 +11,7 @@ export type Artifact = {
 };
 
 export type txConfig = {
+  value: ethers.BigNumber;
   gasLimit: number;
   maxFeePerGas: ethers.BigNumber;
   maxPriorityFeePerGas: ethers.BigNumber;
@@ -18,9 +19,9 @@ export type txConfig = {
 
 export type AuctionDetails = {
   seller: string;
-  reservePrice: number;
+  reservePrice: ethers.BigNumber;
   sellerFundsRecipient: string;
-  highestBid: number;
+  highestBid: ethers.BigNumber;
   highestBidder: number;
   duration: number;
   startTime: number;

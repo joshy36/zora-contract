@@ -1,0 +1,1 @@
+{"version":3,"file":"createBid.js","sourceRoot":"","sources":["../src/createBid.ts"],"names":[],"mappings":"AAGA,eAAe,KAAK,EAClB,QAAyB,EACzB,MAAqB,EACrB,QAAkB,EAClB,kBAA0B,EAC1B,OAAe,EACc,EAAE;IAC/B,OAAO,MAAM,QAAQ;SAClB,OAAO,CAAC,MAAM,CAAC;SACf,SAAS,CAAC,kBAAkB,EAAE,OAAO,EAAE,QAAQ,CAAC,CAAC;AACtD,CAAC,CAAC"}
