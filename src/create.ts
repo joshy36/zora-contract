@@ -8,7 +8,7 @@ export default async (
   nftContractAddress: string,
   tokenId: number
 ): Promise<ethers.Transaction> => {
-  const tx = await contract
+  return await contract
     .connect(wallet)
     .createAuction(
       nftContractAddress,
@@ -19,6 +19,4 @@ export default async (
       10,
       txConfig
     );
-
-  return tx;
 };

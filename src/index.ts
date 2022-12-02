@@ -4,6 +4,7 @@ import { ethers, Wallet } from 'ethers';
 import create from './create.js';
 
 import * as dotenv from 'dotenv';
+import getAuctionDetails from './getAuctionDetails.js';
 dotenv.config();
 
 const { PRIVATE_KEY, ALCHEMY_API_KEY } = process.env;
@@ -28,12 +29,16 @@ const txConfig: txConfig = {
   maxPriorityFeePerGas: ethers.utils.parseUnits('2', 'gwei'),
 };
 
-const tx: ethers.Transaction = await create(
-  contract,
-  wallet,
-  txConfig,
-  nftContractAddress,
-  11
-);
+// const tx = await create(
+//   contract,
+//   wallet,
+//   txConfig,
+//   nftContractAddress,
+//   11
+// );
 
-console.log(tx.hash);
+// console.log(tx.hash);
+
+const details = await getAuctionDetails(contract, nftContractAddress, 11);
+
+console.log(details);
