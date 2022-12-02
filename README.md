@@ -1,3 +1,3 @@
 # zora-contract
 
-Some typscipt functions for interacting with the zora smart contracts.
+Some typescript functions for interacting with the zora auction contracts.
