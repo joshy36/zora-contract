@@ -1,6 +1,7 @@
-export default async (contract, wallet, txConfig, contractAddress, tokenId) => {
+export default async (contract, wallet, txConfig, nftContractAddress, tokenId) => {
     const tx = await contract
         .connect(wallet)
-        .createAuction(contractAddress, tokenId, 10, 10, contractAddress, 10, txConfig);
+        .createAuction(nftContractAddress, tokenId, 10, 10, nftContractAddress, 10, txConfig);
+    return tx;
 };
 //# sourceMappingURL=create.js.map

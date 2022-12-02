@@ -1,21 +1,24 @@
+import { txConfig } from './types.js';
 import { ethers } from 'ethers';
 
 export default async (
   contract: ethers.Contract,
   wallet: ethers.Wallet,
-  txConfig,
-  contractAddress: string,
+  txConfig: txConfig,
+  nftContractAddress: string,
   tokenId: number
-): Promise<any> => {
+): Promise<ethers.Transaction> => {
   const tx = await contract
     .connect(wallet)
     .createAuction(
-      contractAddress,
+      nftContractAddress,
       tokenId,
       10,
       10,
-      contractAddress,
+      nftContractAddress,
       10,
       txConfig
     );
+
+  return tx;
 };
