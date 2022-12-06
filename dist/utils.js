@@ -13,4 +13,19 @@ export async function createBid(contract, wallet, txConfig, nftContractAddress, 
 export async function auctionDetails(contract, nftContractAddress, tokenId) {
     return await contract.auctionForNFT(nftContractAddress, tokenId);
 }
+export async function setApproval(contract, module) {
+    return await contract.setApprovalForModule(module, true);
+}
+export async function pastBids(contract, tokenContract, tokenId
+// firstBid: number,
+// extended: boolean,
+// auction: AuctionDetails
+) {
+    const filter = contract.filters.AuctionBid(tokenContract, tokenId
+    // firstBid,
+    // extended,
+    // auction
+    );
+    return await contract.queryFilter(filter);
+}
 //# sourceMappingURL=utils.js.map

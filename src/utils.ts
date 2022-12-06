@@ -45,3 +45,19 @@ export async function auctionDetails(
 ): Promise<AuctionDetails> {
   return await contract.auctionForNFT(nftContractAddress, tokenId);
 }
+
+export async function setApproval(
+  contract: ethers.Contract,
+  module: string
+): Promise<AuctionDetails> {
+  return await contract.setApprovalForModule(module, true);
+}
+
+export async function pastBids(
+  contract: ethers.Contract,
+  tokenContract: string,
+  tokenId: number
+): Promise<any> {
+  const filter = contract.filters.AuctionBid(tokenContract, tokenId);
+  return await contract.queryFilter(filter);
+}
