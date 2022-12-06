@@ -75,4 +75,5 @@ const txConfig: txConfig = {
 // // const timeRemaining = details.firstBidTime + details.duration - block.timestamp;
 
 const past = await pastBids(contract, nftContractAddress, tokenId);
-console.log(past);
+// print just the bid numbers
+console.log(past.map((x) => x.args.auction.highestBid.toNumber() / 1e18));

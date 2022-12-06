@@ -2,7 +2,6 @@ import abi from './ReserveAuctionCoreEth.json' assert { type: 'json' };
 import { ethers, Wallet } from 'ethers';
 import { pastBids, } from './utils.js';
 import * as dotenv from 'dotenv';
-import { Interface } from 'ethers/lib/utils.js';
 dotenv.config();
 const { PRIVATE_KEY, BIDDER_PRIVATE_KEY, ALCHEMY_API_KEY } = process.env;
 const sellerFundsRecipient = '0xBE0943a2B71fFf61CB885018A95ee55f7Ae361b0';
@@ -49,8 +48,5 @@ const txConfig = {
 // // const block = await provider.getBlock(blockNumberOrHash);
 // // const timeRemaining = details.firstBidTime + details.duration - block.timestamp;
 const past = await pastBids(contract, nftContractAddress, tokenId);
-console.log(past);
-const iface = new Interface(['event createBid(address,uint256)']);
-//const event = iface.parseLog(past);
-// console.log(event);
+console.log(past.map((x) => x.args.auction.highestBid.toNumber() / 1e18));
 //# sourceMappingURL=main.js.map

@@ -16,16 +16,8 @@ export async function auctionDetails(contract, nftContractAddress, tokenId) {
 export async function setApproval(contract, module) {
     return await contract.setApprovalForModule(module, true);
 }
-export async function pastBids(contract, tokenContract, tokenId
-// firstBid: number,
-// extended: boolean,
-// auction: AuctionDetails
-) {
-    const filter = contract.filters.AuctionBid(tokenContract, tokenId
-    // firstBid,
-    // extended,
-    // auction
-    );
+export async function pastBids(contract, tokenContract, tokenId) {
+    const filter = contract.filters.AuctionBid(tokenContract, tokenId);
     return await contract.queryFilter(filter);
 }
 //# sourceMappingURL=utils.js.map
